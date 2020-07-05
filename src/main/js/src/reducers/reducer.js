@@ -30,7 +30,7 @@ const reducer = (
         ...state,
         isLoadingLanguageResponse: false,
         isErrorLoadingLanguageResponse: false,
-        languageResponse: action.payload
+        languageResponse: action.payload.data
       }
     case SEND_TEXT_REJECTED:
       return {
