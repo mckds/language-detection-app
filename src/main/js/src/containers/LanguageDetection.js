@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {languageDetectionAction} from "../actions/actions";
 import * as selectors from "../reducers/selectors";
 import DetectionResult from "../components/DetectionResult";
+import {LanguageDetectionWrapper} from "../components/LanguageDetectionWrapper";
 
 const LanguageDetection = () => {
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const LanguageDetection = () => {
   const isButtonDisabled = !text && !isLoadingLanguageResponse
 
   return (
-      <div>
+      <LanguageDetectionWrapper>
         <Header text={"Language detection"} />
         <TextArea onChange={handleTextInput} placeholder={"Type here text in any language"} />
         <br />
@@ -45,7 +46,7 @@ const LanguageDetection = () => {
             ? <DetectionResult result={languageResponse} />
             : null
         }
-      </div>
+      </LanguageDetectionWrapper>
   )
 }
 
